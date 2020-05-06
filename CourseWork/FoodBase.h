@@ -4,19 +4,18 @@
 class FoodBase : public IFood
 {
 private:
-	std::vector<std::pair<std::string, int>> Dishes_Calories;		// this is empty
+	std::vector<std::pair<std::string, int>> Dishes_Calories;
 
 protected:
-	FoodBase(std::vector<std::pair<std::string, int>> Dishes) : Dishes_Calories(Dishes) {}	// this isnt working
-	//virtual GetKind() = 0;
-	//virtual GetDish() = 0;
-	virtual std::string MenuDishes() = 0;
-	void PrintMenu();
+	int CalculateCalories(std::string dish, int amount) override;
 
 public:
+	// use in future
 	FoodBase();
 
-	int CalculateCalories() override;
+	//Gets and Sets
+	std::vector<std::pair<std::string, int>> GetDishes_Calories();
+	void SetDishesCalories(std::vector<std::pair<std::string, int>> Dishes);  // Initializing Dishes_Calories vector
 
-	void Test() override;
+	//void Test() override;
 };

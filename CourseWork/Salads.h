@@ -4,10 +4,10 @@
 class Salads : public FoodBase
 {
 private:
-	std::vector<std::pair<std::string, int>> Dishes = { {"", 50}, {"", 50}, {"", 50}, {"", 50}, {"", 50}, 
-		{"", 50}, };
+	std::vector<std::pair<std::string, int>> Dishes_Salads = { {"Cesar", 50}, { "", 50 }, { "", 50 }, 
+		{ "", 50 }, { "", 50 }, { "", 50 } };
 public:
-	Salads() : FoodBase(Dishes) {}
+	Salads();
 
-	std::string MenuDishes() override;
+	void PrintMenu() override;
 };

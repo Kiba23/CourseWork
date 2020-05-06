@@ -1,12 +1,24 @@
 #include "Meat.h"
 
-std::string Meat::MenuDishes()
+Meat::Meat()
 {
-	std::string out;
-	for (int i = 0; i < Dishes.size(); i++) {
-		out.append(Dishes[i].first + ", ");
-		if (i == Dishes.size() - 1)
-			out.append(".");
+	SetDishesCalories(Dishes_Meat);
+}
+
+void Meat::PrintMenu()
+{
+	std::cout << "Menu (use amount in grams): ";
+	for (int i = 0; i < Dishes_Meat.size(); i++) {
+		std::cout << Dishes_Meat[i].first << " ";
 	}
-	return out;
+	std::cout << std::endl;
+}
+
+int Meat::CalculateCalories(std::string dish, int amount)
+{
+	for (int i = 0; i < GetDishes_Calories().size(); i++) {
+		if (dish == GetDishes_Calories()[i].first) {
+			return GetDishes_Calories()[i].second / amount; // breakpoint (need formula)
+		}
+	}
 }

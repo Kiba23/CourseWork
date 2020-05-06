@@ -5,24 +5,34 @@ FoodBase::FoodBase()
     // smth
 }
 
-int FoodBase::CalculateCalories()
+int FoodBase::CalculateCalories(std::string dish, int amount)
 {
-	return 0;
-}
-
-void FoodBase::Test()
-{
-    for (std::vector<std::pair<std::string, int>>::iterator iter = Dishes_Calories.begin();
-        iter != Dishes_Calories.end();
-        ++iter)
-    {
-        std::cout << "First: " << iter->first
-            << ", Second: " << iter->second << std::endl;
+    for (int i = 0; i < Dishes_Calories.size(); i++) {
+        if (dish == Dishes_Calories[i].first) {
+            return Dishes_Calories[i].second * amount;
+        }
     }
-    std::cout << "Size of Vector  >>>>>  " << Dishes_Calories.size();
 }
 
-void FoodBase::PrintMenu()
-{
-    std::cout << this->MenuDishes() << std::endl;
+// Gets and Sets
+std::vector<std::pair<std::string, int>> FoodBase::GetDishes_Calories() { return Dishes_Calories; }
+void FoodBase::SetDishesCalories(std::vector<std::pair<std::string, int>> Dishes)
+{ 
+    for (int i = 0; i < Dishes.size(); i++) {
+        Dishes_Calories.push_back(std::make_pair(Dishes[i].first, Dishes[i].second));
+    }
 }
+
+
+
+//void FoodBase::Test()
+//{
+//    for (std::vector<std::pair<std::string, int>>::iterator iter = Dishes_Calories.begin();
+//        iter != Dishes_Calories.end();
+//        ++iter)
+//    {
+//        std::cout << "First: " << iter->first
+//            << ", Second: " << iter->second << std::endl;
+//    }
+//    std::cout << "Size of Vector  >>>>>  " << Dishes_Calories.size();
+//}

@@ -1,12 +1,6 @@
 #include "IFood.h"
 #include "FoodBase.h"
 #include "Menu.h"
-//#include "Meat.h"
-//#include "Fruits.h"
-//#include "Vegetables.h"
-//#include "Soups.h"
-//#include "Salads.h"
-//#include "Beverages.h"
 
 /*                      NOTES
     Bug: Problem with summing all calories (operator
@@ -37,18 +31,16 @@ int main()
         std::string dish;
         int amount;
 
-        Menu* menu = new Menu;
+        Menu* menu = new Menu();
         std::cin >> kind_of_food;
-        menu->SelectKindOfFood(kind_of_food);
+        IFood* food = menu->SelectKindOfFood(kind_of_food);
+        food->PrintMenu();
+
         std::cin >> dish >> amount;
+        std::cout << food->CalculateCalories(dish, amount);
 
 
-        IFood* food = menu->GetObjOfFood();
-        food->PrintMenu();      // what to do with this
-
-
-        //IFood* test = new FoodBase;
-        //test->Test();
+        //food->Test();
         
 
         //IFood* food;
@@ -59,7 +51,7 @@ int main()
         //base->GetDish(); // do whatever
 
         // End of the program
-        std::cout << "---" << std::endl;                    // End of the cycle
+        std::cout << std::endl << "---" << std::endl;           // End of the cycle
     }
 
     return 0;
