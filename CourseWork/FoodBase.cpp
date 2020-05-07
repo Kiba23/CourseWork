@@ -1,11 +1,10 @@
 #include "FoodBase.h"
 
-FoodBase::FoodBase()
-{
-    // smth
-}
+// Default constructor. Does nothing
+FoodBase::FoodBase() { }
 
-int FoodBase::CalculateCalories(std::string dish, int amount)
+// For calculating amount of calories. All food classes used it, except Meat class (Polymorphism)
+double FoodBase::CalculateCalories(std::string dish, int amount)
 {
     for (int i = 0; i < Dishes_Calories.size(); i++) {
         if (dish == Dishes_Calories[i].first) {
@@ -16,7 +15,9 @@ int FoodBase::CalculateCalories(std::string dish, int amount)
 }
 
 // Gets and Sets
-std::vector<std::pair<std::string, int>> FoodBase::GetDishes_Calories() { return Dishes_Calories; }
+std::vector<std::pair<std::string, double>> FoodBase::GetDishes_Calories() { return Dishes_Calories; }
+int FoodBase::GetSumOfCalories() { return SumOfCalories; }
+
 void FoodBase::SetDishesCalories(std::vector<std::pair<std::string, int>> Dishes)
 { 
     for (int i = 0; i < Dishes.size(); i++) {
@@ -24,21 +25,17 @@ void FoodBase::SetDishesCalories(std::vector<std::pair<std::string, int>> Dishes
     }
 }
 
-int FoodBase::operator+=(const IFood* obj)
+// Operator overloading for summing all calories
+IFood& FoodBase::operator+=(IFood* obj)
 {
-    SumOfCalories += obj->SumOfCalories;  // breakpoint
-    return SumOfCalories;
+    SumOfCalories += obj->GetSumOfCalories();
+    return *this;
 }
 
-
-//void FoodBase::Test()
-//{
-//    for (std::vector<std::pair<std::string, int>>::iterator iter = Dishes_Calories.begin();
-//        iter != Dishes_Calories.end();
-//        ++iter)
-//    {
-//        std::cout << "First: " << iter->first
-//            << ", Second: " << iter->second << std::endl;
-//    }
-//    std::cout << "Size of Vector  >>>>>  " << Dishes_Calories.size();
-//}
+// Showing Menu (never used, just in case)
+void FoodBase::PrintMenu()
+{
+    for (int i = 0; i < Dishes_Calories.size(); i++) {
+        std::cout << "All dishes: " << Dishes_Calories[i].first << " ";
+    }
+}

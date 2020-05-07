@@ -14,11 +14,12 @@ void Meat::PrintMenu()
 	std::cout << std::endl;
 }
 
-int Meat::CalculateCalories(std::string dish, int amount)
+double Meat::CalculateCalories(std::string dish, int amount)
 {
 	for (int i = 0; i < GetDishes_Calories().size(); i++) {
 		if (dish == GetDishes_Calories()[i].first) {
-			return GetDishes_Calories()[i].second / amount; // breakpoint (need formula)
+			SumOfCalories = (GetDishes_Calories()[i].second / 100) * amount;
+			return SumOfCalories;
 		}
 	}
 }

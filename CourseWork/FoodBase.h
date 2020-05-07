@@ -4,21 +4,26 @@
 class FoodBase : public IFood
 {
 private:
-	std::vector<std::pair<std::string, int>> Dishes_Calories;
-	int SumOfCalories = 0;
+	// Vector with dishes of user's kind of food
+	std::vector<std::pair<std::string, double>> Dishes_Calories;
 
 protected:
-	int CalculateCalories(std::string dish, int amount) override;
-
-public:
-	// use in future
-	FoodBase();
+	double SumOfCalories = 0;
+	// Calculation calories. All food classes used it, except Meat class (Polymorphism)
+	double CalculateCalories(std::string dish, int amount) override;
 
 	//Gets and Sets
-	std::vector<std::pair<std::string, int>> GetDishes_Calories();
+	std::vector<std::pair<std::string, double>> GetDishes_Calories();
 	void SetDishesCalories(std::vector<std::pair<std::string, int>> Dishes);  // Initializing Dishes_Calories vector
+	int GetSumOfCalories() override;
 
-	int operator+=(const IFood* obj) override;
+public:
+	// Constructor. Does nothing
+	FoodBase();
 
-	//void Test() override;
+	// Operator overloading for summing calories
+	IFood& operator+=(IFood* obj) override;
+
+	// Showing menu depending on kind of food chosed by user (never used)
+	void PrintMenu() override;
 };

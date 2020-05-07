@@ -2,12 +2,10 @@
 #include "IMenu.h"
 #include "FoodBase.h"
 #include "Menu.h"
-#include "Sum.h"
 
 /*                      NOTES
-    Bug: Problem with summing all calories (operator
-        overloading).
-    To do: Polymorphism, Initialize all products,
+    To do: 1 more opertor overload, Menu should be 
+        base class, Initialize all products, 
         Calculate normal amount calories of each person.
     Possibilities to improve: If user's dish wasn't 
         found he cand declare it by himself and also 
@@ -28,8 +26,8 @@ int main()
     int steps;
     std::cin >> steps;
 
-    // For summing
-    IFood* sum = new Meat();  // check if it double the array
+    // Object for summing calories
+    IFood* sum = new FoodBase();
 
     for (int i = 0; i < steps; i++) {
         // Declaring variables
@@ -53,12 +51,8 @@ int main()
         // Output
         std::cout << "Amount of calories per current dish: " << food->CalculateCalories(dish, amount) << std::endl;
         // Summing calories in one object
-        sum = sum += food;  // breakpoint
-        std::cout << "Calories in total: " << sum->GetSumOfCalories();  // breakpoint
-
-
-        //food->Test();
-        
+        sum->operator+=(food);
+        std::cout << "Calories in total: " << sum->GetSumOfCalories();
 
         // End of the cycle
         std::cout << std::endl << "---" << std::endl;
