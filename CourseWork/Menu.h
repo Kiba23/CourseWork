@@ -1,5 +1,6 @@
 #pragma once
-#include "FoodBase.h"
+#include "IMenu.h"
+#include "IFood.h"
 #include "Meat.h"
 #include "Fruits.h"
 #include "Vegetables.h"
@@ -7,7 +8,7 @@
 #include "Salads.h"
 #include "Beverages.h"
 
-class Menu
+class Menu : public IMenu
 {
 private:
 	std::map<std::string, IFood*> m_food;
@@ -15,5 +16,5 @@ private:
 public:
 	Menu();
 
-	IFood* SelectKindOfFood(std::string food);
+	IFood* SelectKindOfFood(std::string food) override;
 };

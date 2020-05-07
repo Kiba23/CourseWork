@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include <map>
 #include <vector>
 #include <utility>
 
@@ -10,6 +9,7 @@ class IFood
 public:						
 	virtual int CalculateCalories(std::string dish, int amount) = 0;
 	virtual void PrintMenu() = 0;
+	virtual int operator+=(const IFood* obj) = 0;
 	//virtual void Test() = 0;
 };
 

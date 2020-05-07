@@ -7,7 +7,7 @@ Vegetables::Vegetables()
 
 void Vegetables::PrintMenu()
 {
-	std::cout << "Menu: ";
+	std::cout << "Menu (use amount in number of vegetables): ";
 	for (int i = 0; i < Dishes_Vegetables.size(); i++) {
 		std::cout << Dishes_Vegetables[i].first << " ";
 	}

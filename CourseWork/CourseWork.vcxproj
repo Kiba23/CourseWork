@@ -162,6 +162,7 @@
     <ClInclude Include="FoodBase.h" />
     <ClInclude Include="Fruits.h" />
     <ClInclude Include="IFood.h" />
+    <ClInclude Include="IMenu.h" />
     <ClInclude Include="Meat.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Salads.h" />

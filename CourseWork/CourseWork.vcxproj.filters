@@ -71,5 +71,8 @@
     <ClInclude Include="Beverages.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="IMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

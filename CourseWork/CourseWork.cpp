@@ -1,6 +1,8 @@
 #include "IFood.h"
+#include "IMenu.h"
 #include "FoodBase.h"
 #include "Menu.h"
+#include "Sum.h"
 
 /*                      NOTES
     Bug: Problem with summing all calories (operator
@@ -26,32 +28,40 @@ int main()
     int steps;
     std::cin >> steps;
 
+    // For summing
+    IFood* sum = new Meat();  // check if it double the array
+
     for (int i = 0; i < steps; i++) {
+        // Declaring variables
         std::string kind_of_food;
         std::string dish;
         int amount;
 
+        // Menu
         Menu* menu = new Menu();
         std::cin >> kind_of_food;
         IFood* food = menu->SelectKindOfFood(kind_of_food);
         food->PrintMenu();
 
-        std::cin >> dish >> amount;
-        std::cout << food->CalculateCalories(dish, amount);
+        // Input & Calculations
+        std::cout << "Enter dish from list: ";
+        std::getline(std::cin, dish);
+        std::getline(std::cin, dish);
+        std::cout << "Enter amount: ";
+        std::cin >> amount;
+
+        // Output
+        std::cout << "Amount of calories per current dish: " << food->CalculateCalories(dish, amount) << std::endl;
+        // Summing calories in one object
+        sum = sum += food;  // breakpoint
+        std::cout << "Calories in total: " << sum->GetSumOfCalories();  // breakpoint
 
 
         //food->Test();
         
 
-        //IFood* food;
-        //food->GetDish(dish, amount);
-        //food->CalculateCalories();
-        
-        //IFood* base = new Meat();
-        //base->GetDish(); // do whatever
-
-        // End of the program
-        std::cout << std::endl << "---" << std::endl;           // End of the cycle
+        // End of the cycle
+        std::cout << std::endl << "---" << std::endl;
     }
 
     return 0;

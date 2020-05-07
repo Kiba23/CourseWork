@@ -7,7 +7,7 @@ Beverages::Beverages()
 
 void Beverages::PrintMenu()
 {
-	std::cout << "Menu: ";
+	std::cout << "Menu (use amount in cup): ";
 	for (int i = 0; i < Dishes_Beverages.size(); i++) {
 		std::cout << Dishes_Beverages[i].first << " ";
 	}

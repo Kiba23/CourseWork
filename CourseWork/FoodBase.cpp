@@ -9,7 +9,8 @@ int FoodBase::CalculateCalories(std::string dish, int amount)
 {
     for (int i = 0; i < Dishes_Calories.size(); i++) {
         if (dish == Dishes_Calories[i].first) {
-            return Dishes_Calories[i].second * amount;
+            SumOfCalories = Dishes_Calories[i].second * amount;
+            return SumOfCalories;
         }
     }
 }
@@ -23,6 +24,11 @@ void FoodBase::SetDishesCalories(std::vector<std::pair<std::string, int>> Dishes
     }
 }
 
+int FoodBase::operator+=(const IFood* obj)
+{
+    SumOfCalories += obj->SumOfCalories;  // breakpoint
+    return SumOfCalories;
+}
 
 
 //void FoodBase::Test()
