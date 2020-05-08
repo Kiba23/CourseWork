@@ -149,22 +149,28 @@
   <ItemGroup>
     <ClCompile Include="Beverages.cpp" />
     <ClCompile Include="CourseWork.cpp" />
+    <ClCompile Include="Female.cpp" />
     <ClCompile Include="FoodBase.cpp" />
     <ClCompile Include="Fruits.cpp" />
     <ClCompile Include="Meat.cpp" />
     <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="Male.cpp" />
     <ClCompile Include="Salads.cpp" />
     <ClCompile Include="Soups.cpp" />
     <ClCompile Include="Vegetables.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Beverages.h" />
+    <ClInclude Include="CalculatorBase.h" />
+    <ClInclude Include="Female.h" />
     <ClInclude Include="FoodBase.h" />
     <ClInclude Include="Fruits.h" />
+    <ClInclude Include="ICalculator.h" />
     <ClInclude Include="IFood.h" />
     <ClInclude Include="IMenu.h" />
     <ClInclude Include="Meat.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="Male.h" />
     <ClInclude Include="Salads.h" />
     <ClInclude Include="Soups.h" />
     <ClInclude Include="Vegetables.h" />

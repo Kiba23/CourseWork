@@ -5,7 +5,7 @@ Menu::Menu()
 	m_food.insert(std::make_pair("Meat", new Meat()));
 	m_food.insert(std::make_pair("Fruits", new Fruits()));
 	m_food.insert(std::make_pair("Vegetables", new Vegetables()));
-	m_food.insert(std::make_pair("Soups", new Soups()));				// check the order
+	m_food.insert(std::make_pair("Soups", new Soups()));
 	m_food.insert(std::make_pair("Salads", new Salads()));
 	m_food.insert(std::make_pair("Beverages", new Beverages()));
 

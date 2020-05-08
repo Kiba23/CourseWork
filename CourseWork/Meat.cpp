@@ -14,6 +14,7 @@ void Meat::PrintMenu()
 	std::cout << std::endl;
 }
 
+// Polymorphism
 double Meat::CalculateCalories(std::string dish, int amount)
 {
 	for (int i = 0; i < GetDishes_Calories().size(); i++) {
