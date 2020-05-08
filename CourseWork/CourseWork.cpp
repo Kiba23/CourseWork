@@ -43,10 +43,10 @@ int main()
         std::cin >> amount;
 
         // Output
-        std::cout << "Amount of calories per current dish: " << food->CalculateCalories(dish, amount) << std::endl;
+        std::cout << "Amount of calories per current dish (in calories(cal)): " << food->CalculateCalories(dish, amount) << std::endl;
         // Summing calories in one object
         sum->operator+=(food);
-        std::cout << "Calories in total: " << sum->GetSumOfCalories();
+        std::cout << "Calories in total (in calories(cal)): " << sum->GetSumOfCalories();
 
         // End of the cycle
         std::cout << std::endl << "---" << std::endl;
@@ -80,7 +80,7 @@ int main()
     calories_left->operator-=(calculator);
 
     // Output
-    std::cout << "Your normal amount of calories per day: " << calories_left->GetCalories_Left() << std::endl;
+    std::cout << "Your normal amount of calories per day (in calories(cal)): " << calories_left->GetCalories_Left() << std::endl;
 
     // End of the program
     std::cout << "---" << std::endl;
