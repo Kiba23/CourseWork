@@ -1,12 +1,15 @@
 #include "Beverages.h"
 
-std::string Beverages::MenuDishes()
+Beverages::Beverages()
 {
-	std::string out;
-	for (int i = 0; i < Dishes.size(); i++) {
-		out.append(Dishes[i].first + ", ");
-		if (i == Dishes.size() - 1)
-			out.append(".");
+	SetDishesCalories(Dishes_Beverages);
+}
+
+void Beverages::PrintMenu()
+{
+	std::cout << "Menu (use amount in cup): ";
+	for (int i = 0; i < Dishes_Beverages.size(); i++) {
+		std::cout << Dishes_Beverages[i].first << " ";
 	}
-	return out;
+	std::cout << std::endl;
 }

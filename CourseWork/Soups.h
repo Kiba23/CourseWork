@@ -4,12 +4,14 @@
 class Soups : public FoodBase
 {
 private:
-	std::vector<std::pair<std::string, int>> Dishes = { {"Beef Soup", 70}, {"Bouillon", 39},
-		{"Cabbage Soup", 69}, {"Chicken Soup", 62}, {"Cream Soup", 96}, {"Mushroom Soup", 85},
-		{"Potato Soup", 166 }, {"Pumpkin Soup", 71}, {"Ramen", 371}, {"Tomato Soup", 74},
-		{"Rice Soup", 58}, {"Vegetable Soup", 67} }; // per 1 serving (cup)
+	std::vector<std::pair<std::string, int>> Dishes_Soups = { {"Beef soup", 70}, { "Bouillon", 39 },
+	{ "Cabbage soup", 69 }, { "Chicken soup", 62 }, { "Cream soup", 96 }, { "Mushroom soup", 85 },
+	{ "Potato soup", 166 }, { "Pumpkin soup", 71 }, { "Ramen", 371 }, { "Tomato soup", 74 },
+	{ "Rice soup", 58 }, { "Vegetable soup", 67 } }; /* per cup serving */
 public:
-	Soups() : FoodBase(Dishes) {}
+	// Default constructor, it redirect Meat vector to FoodBase
+	Soups();
 
-	std::string MenuDishes() override;
+	// Showing menu of dishes
+	void PrintMenu() override;
 };

@@ -1,16 +1,18 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include <map>
 #include <vector>
 #include <utility>
 
 class IFood	
 {
 public:						
-	virtual int CalculateCalories() = 0;
-	virtual void Test() = 0;
-};
+	virtual double CalculateCalories(std::string& dish, int& amount) = 0;
+	virtual void PrintMenu() = 0;
+	virtual IFood& operator+=(IFood* obj) = 0;
 
-// virtual void PrintList() { std::cout << "Intreface"; } - not pure function
-// virtual void PrintList() = 0; - pure function
+	// Gets and Sets
+	virtual std::vector<std::pair<std::string, double>> GetDishes_Calories() = 0;
+	virtual void SetDishesCalories(std::vector<std::pair<std::string, int>>& Dishes) = 0;
+	virtual int GetSumOfCalories() = 0;
+};

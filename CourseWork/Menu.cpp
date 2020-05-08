@@ -2,24 +2,25 @@
 
 Menu::Menu()
 {
-	m_food["Meat"] = &Meat();
-	m_food["Fruits"] = &Fruits();
-	m_food["Vegetables"] = &Vegetables();
-	m_food["Soups"] = &Soups();					// check the PORYADOK
-	m_food["Salads"] = &Salads();
-	m_food["Beverages"] = &Beverages();
+	m_food.insert(std::make_pair("Meat", new Meat()));
+	m_food.insert(std::make_pair("Fruits", new Fruits()));
+	m_food.insert(std::make_pair("Vegetables", new Vegetables()));
+	m_food.insert(std::make_pair("Soups", new Soups()));
+	m_food.insert(std::make_pair("Salads", new Salads()));
+	m_food.insert(std::make_pair("Beverages", new Beverages()));
+
+	std::cout << "Kinds of food: ";
+	for (auto elem : m_food) {
+		std::cout << elem.first << " ";
+	}
+	std::cout << std::endl;
 }
 
-void Menu::SelectKindOfFood(std::string& food)
+IFood* Menu::SelectKindOfFood(std::string food)
 {
 	for (auto elem : m_food) {
 		if (food == elem.first) {
-			KindOfFood = food;
-			Obj = elem.second;
+			return elem.second;
 		}
 	}
 }
-
-std::string Menu::GetKindOfFood() { return KindOfFood; }
-
-IFood* Menu::GetObjOfFood() { return Obj; }

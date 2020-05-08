@@ -42,6 +42,15 @@
     <ClCompile Include="FoodBase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Male.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Female.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CalculatorBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IFood.h">
@@ -69,6 +78,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Beverages.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ICalculator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CalculatorBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Male.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Female.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,12 +1,15 @@
 #include "Fruits.h"
 
-std::string Fruits::MenuDishes()
+Fruits::Fruits()
 {
-	std::string out;
-	for (int i = 0; i < Dishes.size(); i++) {
-		out.append(Dishes[i].first + ", ");
-		if (i == Dishes.size() - 1)
-			out.append(".");
+	SetDishesCalories(Dishes_Fruits);
+}
+
+void Fruits::PrintMenu()
+{
+	std::cout << "Menu (use amount in number of fruits): ";
+	for (int i = 0; i < Dishes_Fruits.size(); i++) {
+		std::cout << Dishes_Fruits[i].first << " ";
 	}
-	return out;
+	std::cout << std::endl;
 }
