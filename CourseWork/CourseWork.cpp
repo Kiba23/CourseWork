@@ -3,15 +3,7 @@
 #include "FoodBase.h"
 #include "Menu.h"
 #include "ICalculator.h"
-#include "CalculatorBase.h"
 #include "Male.h"
-
-/*                      NOTES
-    To do: 1 more opertor overload.
-    Possibilities to improve: If user's dish wasn't 
-        found he cand declare it by himself and also 
-        input amount of calories.
-*/
 
 void Introduction() 
 {
@@ -81,9 +73,15 @@ int main()
     ICalculator* gender_obj = new Male();
     // Assigning right object (gender) and output right formula
     ICalculator* calculator = gender_obj->SelectGender(gender);
+    calculator->SetData(age, height, weight);
+    // Creating new object
+    ICalculator* calories_left = gender_obj;
+    // Calculating normal amount of calories using operator overloading
+    calories_left->operator-=(calculator);
+
     // Output
-    std::cout << "Your normal amount of calories per day: " << calculator->Calculator(age, height, weight) << std::endl;
-    std::cout << "Calories left: " << /*... <<*/ std::endl;
+    std::cout << "Your normal amount of calories per day: " << calories_left->GetCalories_Left() << std::endl;
+
     // End of the program
     std::cout << "---" << std::endl;
 

@@ -1,10 +1,10 @@
 #include "FoodBase.h"
 
-// Default constructor. Does nothing
+// Default constructor for creating object
 FoodBase::FoodBase() { }
 
 // For calculating amount of calories. All food classes used it, except Meat class (Polymorphism)
-double FoodBase::CalculateCalories(std::string dish, int amount)
+double FoodBase::CalculateCalories(std::string& dish, int& amount)
 {
     for (int i = 0; i < Dishes_Calories.size(); i++) {
         if (dish == Dishes_Calories[i].first) {
@@ -18,7 +18,7 @@ double FoodBase::CalculateCalories(std::string dish, int amount)
 std::vector<std::pair<std::string, double>> FoodBase::GetDishes_Calories() { return Dishes_Calories; }
 int FoodBase::GetSumOfCalories() { return SumOfCalories; }
 
-void FoodBase::SetDishesCalories(std::vector<std::pair<std::string, int>> Dishes)
+void FoodBase::SetDishesCalories(std::vector<std::pair<std::string, int>>& Dishes)
 { 
     for (int i = 0; i < Dishes.size(); i++) {
         Dishes_Calories.push_back(std::make_pair(Dishes[i].first, Dishes[i].second));

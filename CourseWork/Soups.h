@@ -9,7 +9,9 @@ private:
 	{ "Potato soup", 166 }, { "Pumpkin soup", 71 }, { "Ramen", 371 }, { "Tomato soup", 74 },
 	{ "Rice soup", 58 }, { "Vegetable soup", 67 } }; /* per cup serving */
 public:
+	// Default constructor, it redirect Meat vector to FoodBase
 	Soups();
 
+	// Showing menu of dishes
 	void PrintMenu() override;
 };

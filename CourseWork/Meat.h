@@ -16,5 +16,5 @@ public:
 	void PrintMenu() override;
 
 	// Polymorphism, because Meat uses another formula to calculate calories
-	double CalculateCalories(std::string dish, int amount) override;
+	double CalculateCalories(std::string& dish, int& amount) override;
 };

@@ -10,7 +10,9 @@ private:
 		{"Liquor", 63}, {"Vodka", 58}, {"Wine", 125}, {"Coca Cola", 139}, {"Coffee", 3}, {"Diet Coke", 3},
 		{"Milk", 149}, {"Tea", 2}, {"Water", 0} };  /* per 1 cup */
 public:
+	// Default constructor, it redirect Meat vector to FoodBase
 	Beverages();
 
+	// Showing menu of dishes
 	void PrintMenu() override;
 };

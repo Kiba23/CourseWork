@@ -10,15 +10,15 @@ private:
 protected:
 	double SumOfCalories = 0;
 	// Calculation calories. All food classes used it, except Meat class (Polymorphism)
-	double CalculateCalories(std::string dish, int amount) override;
+	double CalculateCalories(std::string& dish, int& amount) override;
 
 	//Gets and Sets
-	std::vector<std::pair<std::string, double>> GetDishes_Calories();
-	void SetDishesCalories(std::vector<std::pair<std::string, int>> Dishes);  // Initializing Dishes_Calories vector
+	std::vector<std::pair<std::string, double>> GetDishes_Calories() override;
+	void SetDishesCalories(std::vector<std::pair<std::string, int>>& Dishes) override;  // Initializing Dishes_Calories vector
 	int GetSumOfCalories() override;
 
 public:
-	// Constructor. Does nothing
+	// Constructor for creating object
 	FoodBase();
 
 	// Operator overloading for summing calories

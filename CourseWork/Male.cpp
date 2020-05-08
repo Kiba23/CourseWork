@@ -1,6 +1,7 @@
 #include "Male.h"
 
-int Male::Calculator(int& age, int& height, int& weight)
+ICalculator& Male::operator-=(ICalculator* obj)
 {
-	return (10 * weight) + (6.25 * height) - (5 * age) + 5;
+	Calories_Left = (10 * obj->GetWeight()) + (6.25 * obj->GetHeight()) - (5 * obj->GetAge()) + 5;
+	return *this;
 }

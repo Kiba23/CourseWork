@@ -9,7 +9,9 @@ private:
 	{ "Melon", 23/*per 1 wedge (69gr)*/ }, { "Pineapple", 453 }, { "Strawberry", 49/*per 1 cup (152gr)*/ },
 	{ "Mango", 202 } };  /* per 1 fruit */
 public:
+	// Default constructor, it redirect Meat vector to FoodBase
 	Fruits();
 
+	// Showing menu of dishes
 	void PrintMenu() override;
 };

@@ -9,7 +9,9 @@ private:
 		{ "Potato salad", 358 }, { "Beef salad", 495 }, { "Chicken salad", 417 }, { "Crab salad", 381 }, 
 		{ "Salmon salad", 406 }, { "Seafood salad", 50 }, { "Shrimp salad", 258 } }; /* per 1 cup serving */
 public:
+	// Default constructor, it redirect Meat vector to FoodBase
 	Salads();
 
+	// Showing menu of dishes
 	void PrintMenu() override;
 };

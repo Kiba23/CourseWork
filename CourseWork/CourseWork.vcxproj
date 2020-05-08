@@ -148,6 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Beverages.cpp" />
+    <ClCompile Include="CalculatorBase.cpp" />
     <ClCompile Include="CourseWork.cpp" />
     <ClCompile Include="Female.cpp" />
     <ClCompile Include="FoodBase.cpp" />

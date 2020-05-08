@@ -8,7 +8,9 @@ private:
 	{ "Carrot", 50 }, { "Cabbage", 50 }, { "Mushroom", 50 }, { "Pepper", 50 }, { "Olives", 50 },
 	{ "Pumpkin", 50 }, { "Avocado", 50 } }; /* per each vegetable */
 public:
+	// Default constructor, it redirect Meat vector to FoodBase
 	Vegetables();
 
+	// Showing menu of dishes
 	void PrintMenu() override;
 };
