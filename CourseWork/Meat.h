@@ -17,4 +17,9 @@ public:
 
 	// Polymorphism, because Meat uses another formula to calculate calories
 	double CalculateCalories(std::string& dish, int& amount) override;
+	/* REAMRK BY TEACHER 
+		For Polymorphism - CalculateCalories should accept for example 3 operators (it should be different
+		from original (base) function) and then compiler will choose itself which function to use, 
+		depending on parameters.
+	*/
 };
